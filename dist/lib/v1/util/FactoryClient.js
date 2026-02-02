@@ -1,5 +1,5 @@
-import { eClientStatus, eGCActions } from "ravcredit-lib";
 import { Crypter } from "../core/Crypt.js";
+import { eClientStatus, eGCActions } from "ravcredit-core";
 export const cClient = {
     id: '',
     name: '',

@@ -1,7 +1,7 @@
 import { ClientDto } from '../DTO/ClientDto.js';
 import { PartialClientDto } from '../DTO/PartialClientDto.js';
-import { eGCActions } from "ravcredit-lib";
 import { IDCClientDto, IDCDataAccountDto } from '../DTO/DynamiCoreDto.js';
+import { eGCActions } from "ravcredit-core";
 export declare const cClient: ClientDto;
 export declare class FactoryClient {
     static CreateClientObj(data: ClientDto | PartialClientDto, action: eGCActions): Promise<any>;

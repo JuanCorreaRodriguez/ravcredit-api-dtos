@@ -1,4 +1,4 @@
-import { eRoles } from 'ravcredit-lib';
+import { eRoles } from "ravcredit-core";
 export declare class UserDto {
     id: string;
     username: string;

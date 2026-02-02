@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
-import { eGCActions } from "ravcredit-lib";
 import { Crypter } from "../core/Crypt.js";
+import { eGCActions } from "ravcredit-core";
 export class FactoryUser {
     static async createUserObj(data, action) {
         const o = {};

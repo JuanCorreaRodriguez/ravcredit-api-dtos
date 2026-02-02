@@ -1,6 +1,6 @@
 import { ScoreNoHitDto } from "./ScoreDto.js";
-import { eAssetPeriod } from "ravcredit-lib";
 import { CatalogDto } from "./CatalogDto.js";
+import { eAssetPeriod } from "ravcredit-core";
 export declare class AssetCategoryDto {
     name: string;
     id: string;

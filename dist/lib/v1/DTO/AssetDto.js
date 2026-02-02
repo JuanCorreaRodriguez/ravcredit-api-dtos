@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { IsArray, IsEnum, IsNumber, IsString, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
 import { ScoreNoHitDto } from "./ScoreDto.js";
-import { eAssetPeriod } from "ravcredit-lib";
 import { CatalogDto } from "./CatalogDto.js";
+import { eAssetPeriod } from "ravcredit-core";
 export class AssetCategoryDto {
     name = "";
     id = "";

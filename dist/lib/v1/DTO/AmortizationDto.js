@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { IsEnum, IsNumber, IsString } from 'class-validator';
-import { AmortizationStatus } from 'ravcredit-lib';
+import { AmortizationStatus } from "ravcredit-core";
 export class AmortizationItemDto {
     installmentNumber = 0;
     id = "";

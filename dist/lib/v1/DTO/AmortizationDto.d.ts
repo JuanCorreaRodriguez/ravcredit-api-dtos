@@ -1,4 +1,4 @@
-import { AmortizationStatus } from 'ravcredit-lib';
+import { AmortizationStatus } from "ravcredit-core";
 export declare class AmortizationItemDto {
     installmentNumber: number;
     id: string;

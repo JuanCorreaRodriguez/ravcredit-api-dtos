@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Type } from "class-transformer";
 import { IsArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, Validate, ValidateNested } from 'class-validator';
 import { ScoreDto, ScoreNoHitDto } from "./ScoreDto.js";
-import { eIdentityTypes, eVerificationStep } from 'ravcredit-lib';
 import { IsStringOrNumber } from '../core/Validators.js';
+import { eIdentityTypes, eVerificationStep } from "ravcredit-core";
 export class ClientPaymentsDto {
     date = 0;
     dayPayment = 0;

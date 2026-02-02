@@ -1,6 +1,6 @@
 import { ScoreDto, ScoreNoHitDto } from "./ScoreDto.js";
 import { NotificationDto } from './NotificationDto.js';
-import { eIdentityTypes, eVerificationStep } from 'ravcredit-lib';
+import { eIdentityTypes, eVerificationStep } from "ravcredit-core";
 export declare class ClientPaymentsDto {
     date: number;
     dayPayment: number;

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { PartialType } from "@nestjs/mapped-types";
 import { Transform } from "class-transformer";
 import { IsEnum, IsNumber, IsOptional, IsString, MinLength } from 'class-validator';
-import { eRoles } from 'ravcredit-lib';
+import { eRoles } from "ravcredit-core";
 export class UserDto {
     id = "";
     username = "";

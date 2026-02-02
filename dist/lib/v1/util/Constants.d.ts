@@ -13,7 +13,7 @@ import { OxxoLineItemsOrderDataDto, OxxoLineItemsOrderDto } from '../DTO/PayOrde
 import { ConektaResDataDto, ConektaResDto, ConektaResObjChargePaidDto, ConektaResPrevAttrDto, OxxoRecurrentSourcesDto } from '../DTO/ConektaDto.js';
 import { NotificationContentDto, NotificationDataDto, NotificationDto } from '../DTO/NotificationDto.js';
 import { DayScheduleDTO, WeekScheduleDto } from '../DTO/WeekScheduleDto.js';
-import { iPaymentDelay, oResponse } from "ravcredit-lib";
+import { iPaymentDelay, oResponse } from "ravcredit-core";
 export declare enum eCurrencies {
     MXN = "MXN"
 }
