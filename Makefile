@@ -11,4 +11,6 @@ publish:
 	npm publish
 
 all:
-	build; version; publish
+	$(MAKE) build
+	$(MAKE) version
+	$(MAKE) publish

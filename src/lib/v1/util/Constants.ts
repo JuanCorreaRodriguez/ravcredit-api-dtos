@@ -2,25 +2,25 @@ import {CustomerInfoDto} from "../DTO/CustomerDto.js";
 import {AlternaChargesDataMethodsDto, AlternaLineItemsDto, ChargesDto} from '../DTO/PayOrderResAlternaDto.js';
 import {MetadataDto, OrderTemplateDto, PaymentMethodsDto} from '../DTO/PaymentLinkDto.js';
 import {
-  IDCAccountConfigDto,
-  IDCAccountPropsDto,
-  IDCClientQueryDto,
-  IDCDataPiiDto,
-  IDCMntryCycleDto,
-  IDCMntryPymtAllDto,
-  IDCMntryPymtAllPaidTotalDto,
-  IDCMntryPymtDueDto,
-  IDCMntryPymtDueTaxDto,
-  IDCMntryPymtOpenDto,
-  IDCMntryPymtPaidDto,
-  IDCMntryPymtPymtDto,
-  IDCMsgDto,
-  IDCOxxoRefItemDto,
-  IDCOxxoRefPymtMthDto,
-  IDCRefCustInfoDto,
-  IDCRefItemsDto,
-  IDCRefPymtMethodDto,
-  IDCTxnRowExtrasDto
+    IDCAccountConfigDto,
+    IDCAccountPropsDto,
+    IDCClientQueryDto,
+    IDCDataPiiDto,
+    IDCMntryCycleDto,
+    IDCMntryPymtAllDto,
+    IDCMntryPymtAllPaidTotalDto,
+    IDCMntryPymtDueDto,
+    IDCMntryPymtDueTaxDto,
+    IDCMntryPymtOpenDto,
+    IDCMntryPymtPaidDto,
+    IDCMntryPymtPymtDto,
+    IDCMsgDto,
+    IDCOxxoRefItemDto,
+    IDCOxxoRefPymtMthDto,
+    IDCRefCustInfoDto,
+    IDCRefItemsDto,
+    IDCRefPymtMethodDto,
+    IDCTxnRowExtrasDto
 } from '../DTO/DynamiCoreDto.js';
 import {AddressDto} from '../DTO/AddressDto.js';
 import {DeviceDto} from '../DTO/DeviceDto.js';
@@ -31,16 +31,16 @@ import {PassportReferenceDataDto} from "../DTO/PassportReferenceDataDto.js";
 import {PassportAdditionalDto} from '../DTO/PassportAdditionalDto.js';
 import {OxxoLineItemsOrderDataDto, OxxoLineItemsOrderDto} from '../DTO/PayOrderResOxxoDto.js';
 import {
-  ConektaResDataDto,
-  ConektaResDto,
-  ConektaResObjChargePaidDto,
-  ConektaResPrevAttrDto,
-  OxxoRecurrentSourcesDto
+    ConektaResDataDto,
+    ConektaResDto,
+    ConektaResObjChargePaidDto,
+    ConektaResPrevAttrDto,
+    OxxoRecurrentSourcesDto
 } from '../DTO/ConektaDto.js';
 import {NotificationContentDto, NotificationDataDto, NotificationDto} from '../DTO/NotificationDto.js';
 import {DayScheduleDTO, WeekScheduleDto} from '../DTO/WeekScheduleDto.js';
-import {iPaymentDelay, oResponse} from "ravcredit-lib";
 import {HttpStatus} from '@nestjs/common';
+import {iPaymentDelay, oResponse} from "ravcredit-core";
 
 export enum eCurrencies { MXN = 'MXN' }
 

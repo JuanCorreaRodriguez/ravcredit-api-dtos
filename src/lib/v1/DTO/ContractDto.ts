@@ -6,7 +6,7 @@ import {FinancialDto} from './FinancialDto.js';
 import {IsStringOrNumber} from "../core/Validators.js";
 import {CompanyDto} from './CompanyDto.js';
 import {oAssetDto} from './AssetDto.js';
-import {eContractStatus} from 'ravcredit-lib'
+import {eContractStatus} from "ravcredit-core";
 
 export class ContractDto {
     @IsString()

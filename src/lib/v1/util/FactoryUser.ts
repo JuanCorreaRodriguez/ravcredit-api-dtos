@@ -1,7 +1,7 @@
 import {v4} from 'uuid';
-import {eGCActions} from "ravcredit-lib";
 import {UpdateUserDto, UserDto} from '../DTO/UserDto.js';
 import {Crypter} from "../core/Crypt.js";
+import {eGCActions} from "ravcredit-core";
 
 export class FactoryUser {
     public static async createUserObj(data: UpdateUserDto, action: eGCActions) {

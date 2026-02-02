@@ -1,8 +1,8 @@
-import {ePaymentType} from 'ravcredit-lib';
 import {IsEnum, IsOptional, IsString, ValidateNested} from 'class-validator';
 import {Type} from 'class-transformer';
 import {ClientDto} from './ClientDto.js';
 import {ContractDto} from './ContractDto.js';
+import {ePaymentType} from "ravcredit-core";
 
 export class PaymentConektaDto {
 

@@ -1,8 +1,8 @@
 import {ClientDto} from '../DTO/ClientDto.js';
 import {PartialClientDto} from '../DTO/PartialClientDto.js';
-import {eClientStatus, eGCActions} from "ravcredit-lib";
 import {IDCClientDto, IDCDataAccountDto} from '../DTO/DynamiCoreDto.js';
 import {Crypter} from "../core/Crypt.js";
+import {eClientStatus, eGCActions} from "ravcredit-core";
 
 export const cClient: ClientDto = {
     id: '',

@@ -1,226 +1,225 @@
-import { Type } from "class-transformer";
+import {Type} from "class-transformer";
 import {IsArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, Validate, ValidateNested} from 'class-validator';
-import { ScoreDto, ScoreNoHitDto} from "./ScoreDto.js";
-import { NotificationDto} from './NotificationDto.js';
-import {eIdentityTypes, eVerificationStep} from 'ravcredit-lib';
-import { PartialType } from "@nestjs/mapped-types";
+import {ScoreDto, ScoreNoHitDto} from "./ScoreDto.js";
+import {NotificationDto} from './NotificationDto.js';
 import {IsStringOrNumber} from '../core/Validators.js';
+import {eIdentityTypes, eVerificationStep} from "ravcredit-core";
 
 export class ClientPaymentsDto {
-  @IsNumber()
-  date: number = 0;
+    @IsNumber()
+    date: number = 0;
 
-  @IsNumber()
-  dayPayment: number = 0;
+    @IsNumber()
+    dayPayment: number = 0;
 
-  @IsNumber()
-  amount: number = 0;
+    @IsNumber()
+    amount: number = 0;
 
-  @IsString()
-  id: string = "";
+    @IsString()
+    id: string = "";
 }
 
 export class UserReferenceDto {
-  @IsString()
-  name: string = "";
+    @IsString()
+    name: string = "";
 
-  @IsString()
-  phone: string = "";
+    @IsString()
+    phone: string = "";
 
-  @IsString()
-  relationship: string = "";
+    @IsString()
+    relationship: string = "";
 }
 
 export class ClientReferencesDto {
-  @IsOptional()
-  @IsNumber()
-  date?: number;
+    @IsOptional()
+    @IsNumber()
+    date?: number;
 
-  @IsOptional()
-  @IsNumber()
-  amount?: number;
+    @IsOptional()
+    @IsNumber()
+    amount?: number;
 
-  @IsString()
-  id: string;
+    @IsString()
+    id: string;
 
-  @IsOptional()
-  @IsString()
-  url?: string;
+    @IsOptional()
+    @IsString()
+    url?: string;
 
-  @IsOptional()
-  @IsString()
-  type?: string;
+    @IsOptional()
+    @IsString()
+    type?: string;
 }
 
 export class ClientDto {
-  @IsString()
-  @IsOptional()
-  id: string;
+    @IsString()
+    @IsOptional()
+    id: string;
 
-  @IsString()
-  name: string;
+    @IsString()
+    name: string;
 
-  @Validate(IsStringOrNumber)
-  username: any;
+    @Validate(IsStringOrNumber)
+    username: any;
 
-  @IsString()
-  email: string;
+    @IsString()
+    email: string;
 
-  @IsString()
-  phone: string;
+    @IsString()
+    phone: string;
 
-  @IsString()
-  curp: string;
+    @IsString()
+    curp: string;
 
-  @IsString()
-  @IsOptional()
-  contract?: string;
+    @IsString()
+    @IsOptional()
+    contract?: string;
 
-  @IsString()
-  @IsOptional()
-  password: string;
+    @IsString()
+    @IsOptional()
+    password: string;
 
-  @IsNumber()
-  @IsOptional()
-  createdAt?: number;
+    @IsNumber()
+    @IsOptional()
+    createdAt?: number;
 
-  @IsNumber()
-  @IsOptional()
-  lastLogin?: number;
+    @IsNumber()
+    @IsOptional()
+    lastLogin?: number;
 
-  @IsArray()
-  @IsOptional()
-  payments?: ClientPaymentsDto[];
+    @IsArray()
+    @IsOptional()
+    payments?: ClientPaymentsDto[];
 
-  @IsOptional()
-  reference?: string;
+    @IsOptional()
+    reference?: string;
 
-  @IsArray()
-  @IsOptional()
-  references?: ClientReferencesDto[];
+    @IsArray()
+    @IsOptional()
+    references?: ClientReferencesDto[];
 
-  @IsOptional()
-  @IsString()
-  token?: string;
+    @IsOptional()
+    @IsString()
+    token?: string;
 
-  @IsArray()
-  userReferences?: UserReferenceDto[];
+    @IsArray()
+    userReferences?: UserReferenceDto[];
 
-  @IsOptional()
-  @IsArray()
-  notifications?: NotificationDto[];
+    @IsOptional()
+    @IsArray()
+    notifications?: NotificationDto[];
 
-  @IsString()
-  @IsOptional()
-  contractUrl?: string;
+    @IsString()
+    @IsOptional()
+    contractUrl?: string;
 
-  @IsOptional()
-  exists?: boolean;
+    @IsOptional()
+    exists?: boolean;
 
-  @IsOptional()
-  contract_temporary?: string;
+    @IsOptional()
+    contract_temporary?: string;
 
-  @IsString()
-  status: string;
+    @IsString()
+    status: string;
 
-  @IsString()
-  @IsOptional()
-  conekta_id?: string;
+    @IsString()
+    @IsOptional()
+    conekta_id?: string;
 
-  @IsString()
-  @IsOptional()
-  passport_id?: string;
+    @IsString()
+    @IsOptional()
+    passport_id?: string;
 
-  @IsNumber()
-  @IsOptional()
-  dynamic_id?: string;
+    @IsNumber()
+    @IsOptional()
+    dynamic_id?: string;
 
-  @IsNumber()
-  @IsOptional()
-  dynamic_account?: string;
+    @IsNumber()
+    @IsOptional()
+    dynamic_account?: string;
 
-  @IsNumber()
-  @IsOptional()
-  dynamic_ref?: string;
+    @IsNumber()
+    @IsOptional()
+    dynamic_ref?: string;
 
-  @IsOptional()
-  score?: any;
+    @IsOptional()
+    score?: any;
 }
 
 export class CurpDto {
-  @IsString()
-  curp: string = "";
+    @IsString()
+    curp: string = "";
 }
 
 export class MediaIdentityDto {
-  @IsString()
-  url: string = "";
+    @IsString()
+    url: string = "";
 
-  @IsEnum(eIdentityTypes)
-  name: eIdentityTypes = eIdentityTypes.SELFIE; // Replace with your default if needed
+    @IsEnum(eIdentityTypes)
+    name: eIdentityTypes = eIdentityTypes.SELFIE; // Replace with your default if needed
 
-  @IsBoolean()
-  active: boolean = false;
+    @IsBoolean()
+    active: boolean = false;
 
-  @IsOptional()
-  metadata: any = null;
+    @IsOptional()
+    metadata: any = null;
 
-  @IsNumber()
-  uploaded: number = 0;
+    @IsNumber()
+    uploaded: number = 0;
 }
 
 export class oClientV2Dto extends ClientDto {
-  @ValidateNested()
-  @Type(() => ScoreDto)
-  score: ScoreDto = new ScoreDto();
+    @ValidateNested()
+    @Type(() => ScoreDto)
+    score: ScoreDto = new ScoreDto();
 
-  @IsOptional()
-  @IsString()
-  seller_id?: string = "";
+    @IsOptional()
+    @IsString()
+    seller_id?: string = "";
 
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => ScoreNoHitDto)
-  scoreNoHit?: ScoreNoHitDto = new ScoreNoHitDto();
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => ScoreNoHitDto)
+    scoreNoHit?: ScoreNoHitDto = new ScoreNoHitDto();
 
-  @IsOptional()
-  @IsString()
-  study_degree?: string = "";
+    @IsOptional()
+    @IsString()
+    study_degree?: string = "";
 
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => MediaIdentityDto)
-  mediaSelfie?: MediaIdentityDto = new MediaIdentityDto();
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => MediaIdentityDto)
+    mediaSelfie?: MediaIdentityDto = new MediaIdentityDto();
 
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => MediaIdentityDto)
-  mediaAddress?: MediaIdentityDto = new MediaIdentityDto();
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => MediaIdentityDto)
+    mediaAddress?: MediaIdentityDto = new MediaIdentityDto();
 
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => MediaIdentityDto)
-  mediaWithDevice?: MediaIdentityDto = new MediaIdentityDto();
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => MediaIdentityDto)
+    mediaWithDevice?: MediaIdentityDto = new MediaIdentityDto();
 
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => MediaIdentityDto)
-  mediaSelfieBack?: MediaIdentityDto = new MediaIdentityDto();
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => MediaIdentityDto)
+    mediaSelfieBack?: MediaIdentityDto = new MediaIdentityDto();
 
-  @IsOptional()
-  @IsEnum(eVerificationStep)
-  identityVerification?: eVerificationStep = eVerificationStep.IDLE;
+    @IsOptional()
+    @IsEnum(eVerificationStep)
+    identityVerification?: eVerificationStep = eVerificationStep.IDLE;
 }
 
 export class UpdateNotificationSimpleDto {
-  @IsString()
-  token: string = "";
+    @IsString()
+    token: string = "";
 
-  @IsString()
-  id: string = "";
+    @IsString()
+    id: string = "";
 }
 
 export class NotificationSubscription {
-  @IsString()
-  token: string[] = [];
+    @IsString()
+    token: string[] = [];
 }
