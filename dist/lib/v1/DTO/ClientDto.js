@@ -8,7 +8,7 @@ import { Type } from "class-transformer";
 import { IsArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, Validate, ValidateNested } from 'class-validator';
 import { ScoreDto, ScoreNoHitDto } from "./ScoreDto.js";
 import { IsStringOrNumber } from '../core/Validators.js';
-import { eIdentityTypes, eVerificationStep } from "ravcredit-core";
+import { eIdentityTypes } from "ravcredit-core";
 export class ClientPaymentsDto {
     date = 0;
     dayPayment = 0;
@@ -218,23 +218,14 @@ __decorate([
 ], MediaIdentityDto.prototype, "uploaded", void 0);
 export class oClientV2Dto extends ClientDto {
     score = new ScoreDto();
-    seller_id = "";
     scoreNoHit = new ScoreNoHitDto();
     study_degree = "";
-    mediaSelfie = new MediaIdentityDto();
-    mediaAddress = new MediaIdentityDto();
-    mediaWithDevice = new MediaIdentityDto();
-    mediaSelfieBack = new MediaIdentityDto();
-    identityVerification = eVerificationStep.IDLE;
+    seller_id = "";
 }
 __decorate([
     ValidateNested(),
     Type(() => ScoreDto)
 ], oClientV2Dto.prototype, "score", void 0);
-__decorate([
-    IsOptional(),
-    IsString()
-], oClientV2Dto.prototype, "seller_id", void 0);
 __decorate([
     IsOptional(),
     ValidateNested(),
@@ -246,28 +237,8 @@ __decorate([
 ], oClientV2Dto.prototype, "study_degree", void 0);
 __decorate([
     IsOptional(),
-    ValidateNested(),
-    Type(() => MediaIdentityDto)
-], oClientV2Dto.prototype, "mediaSelfie", void 0);
-__decorate([
-    IsOptional(),
-    ValidateNested(),
-    Type(() => MediaIdentityDto)
-], oClientV2Dto.prototype, "mediaAddress", void 0);
-__decorate([
-    IsOptional(),
-    ValidateNested(),
-    Type(() => MediaIdentityDto)
-], oClientV2Dto.prototype, "mediaWithDevice", void 0);
-__decorate([
-    IsOptional(),
-    ValidateNested(),
-    Type(() => MediaIdentityDto)
-], oClientV2Dto.prototype, "mediaSelfieBack", void 0);
-__decorate([
-    IsOptional(),
-    IsEnum(eVerificationStep)
-], oClientV2Dto.prototype, "identityVerification", void 0);
+    IsString()
+], oClientV2Dto.prototype, "seller_id", void 0);
 export class UpdateNotificationSimpleDto {
     token = "";
     id = "";

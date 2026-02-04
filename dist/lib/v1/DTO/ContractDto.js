@@ -12,7 +12,8 @@ import { FinancialDto } from './FinancialDto.js';
 import { IsStringOrNumber } from "../core/Validators.js";
 import { CompanyDto } from './CompanyDto.js';
 import { oAssetDto } from './AssetDto.js';
-import { eContractStatus } from "ravcredit-core";
+import { eContractStatus, eVerificationStep } from "ravcredit-core";
+import { MediaIdentityDto } from "./ClientDto.js";
 export class ContractDto {
     id;
     client;
@@ -68,6 +69,12 @@ export class ContractV2Dto extends ContractDto {
     company = new CompanyDto();
     contract_status = eContractStatus.APPROVED; // Or your default enum value
     asset = new oAssetDto();
+    amortization_id;
+    mediaSelfie = new MediaIdentityDto();
+    mediaAddress = new MediaIdentityDto();
+    mediaWithDevice = new MediaIdentityDto();
+    mediaSelfieBack = new MediaIdentityDto();
+    identityVerification = eVerificationStep.IDLE;
 }
 __decorate([
     ValidateNested(),
@@ -80,6 +87,34 @@ __decorate([
     ValidateNested(),
     Type(() => oAssetDto)
 ], ContractV2Dto.prototype, "asset", void 0);
+__decorate([
+    IsOptional(),
+    IsString()
+], ContractV2Dto.prototype, "amortization_id", void 0);
+__decorate([
+    IsOptional(),
+    ValidateNested(),
+    Type(() => MediaIdentityDto)
+], ContractV2Dto.prototype, "mediaSelfie", void 0);
+__decorate([
+    IsOptional(),
+    ValidateNested(),
+    Type(() => MediaIdentityDto)
+], ContractV2Dto.prototype, "mediaAddress", void 0);
+__decorate([
+    IsOptional(),
+    ValidateNested(),
+    Type(() => MediaIdentityDto)
+], ContractV2Dto.prototype, "mediaWithDevice", void 0);
+__decorate([
+    IsOptional(),
+    ValidateNested(),
+    Type(() => MediaIdentityDto)
+], ContractV2Dto.prototype, "mediaSelfieBack", void 0);
+__decorate([
+    IsOptional(),
+    IsEnum(eVerificationStep)
+], ContractV2Dto.prototype, "identityVerification", void 0);
 export class ContractDto2 {
     id;
     client;

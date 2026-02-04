@@ -1,6 +1,6 @@
 import { ScoreDto, ScoreNoHitDto } from "./ScoreDto.js";
 import { NotificationDto } from './NotificationDto.js';
-import { eIdentityTypes, eVerificationStep } from "ravcredit-core";
+import { eIdentityTypes } from "ravcredit-core";
 export declare class ClientPaymentsDto {
     date: number;
     dayPayment: number;
@@ -59,14 +59,9 @@ export declare class MediaIdentityDto {
 }
 export declare class oClientV2Dto extends ClientDto {
     score: ScoreDto;
-    seller_id?: string;
     scoreNoHit?: ScoreNoHitDto;
     study_degree?: string;
-    mediaSelfie?: MediaIdentityDto;
-    mediaAddress?: MediaIdentityDto;
-    mediaWithDevice?: MediaIdentityDto;
-    mediaSelfieBack?: MediaIdentityDto;
-    identityVerification?: eVerificationStep;
+    seller_id?: string;
 }
 export declare class UpdateNotificationSimpleDto {
     token: string;

@@ -3,7 +3,8 @@ import { DeviceDto } from './DeviceDto.js';
 import { FinancialDto } from './FinancialDto.js';
 import { CompanyDto } from './CompanyDto.js';
 import { oAssetDto } from './AssetDto.js';
-import { eContractStatus } from "ravcredit-core";
+import { eContractStatus, eVerificationStep } from "ravcredit-core";
+import { MediaIdentityDto } from "./ClientDto.js";
 export declare class ContractDto {
     id: string;
     client: string;
@@ -21,6 +22,12 @@ export declare class ContractV2Dto extends ContractDto {
     company: CompanyDto;
     contract_status: eContractStatus;
     asset: oAssetDto;
+    amortization_id?: string;
+    mediaSelfie?: MediaIdentityDto;
+    mediaAddress?: MediaIdentityDto;
+    mediaWithDevice?: MediaIdentityDto;
+    mediaSelfieBack?: MediaIdentityDto;
+    identityVerification?: eVerificationStep;
 }
 export declare class ContractDto2 {
     id: string;
