@@ -3,7 +3,7 @@ import {IsArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, Validate, Va
 import {ScoreDto, ScoreNoHitDto} from "./ScoreDto.js";
 import {NotificationDto} from './NotificationDto.js';
 import {IsStringOrNumber} from '../core/Validators.js';
-import {eIdentityTypes, eVerificationStep} from "ravcredit-core";
+import {eIdentityTypes} from "ravcredit-core";
 
 export class ClientPaymentsDto {
     @IsNumber()
@@ -174,10 +174,6 @@ export class oClientV2Dto extends ClientDto {
     score: ScoreDto = new ScoreDto();
 
     @IsOptional()
-    @IsString()
-    seller_id?: string = "";
-
-    @IsOptional()
     @ValidateNested()
     @Type(() => ScoreNoHitDto)
     scoreNoHit?: ScoreNoHitDto = new ScoreNoHitDto();
@@ -187,28 +183,8 @@ export class oClientV2Dto extends ClientDto {
     study_degree?: string = "";
 
     @IsOptional()
-    @ValidateNested()
-    @Type(() => MediaIdentityDto)
-    mediaSelfie?: MediaIdentityDto = new MediaIdentityDto();
-
-    @IsOptional()
-    @ValidateNested()
-    @Type(() => MediaIdentityDto)
-    mediaAddress?: MediaIdentityDto = new MediaIdentityDto();
-
-    @IsOptional()
-    @ValidateNested()
-    @Type(() => MediaIdentityDto)
-    mediaWithDevice?: MediaIdentityDto = new MediaIdentityDto();
-
-    @IsOptional()
-    @ValidateNested()
-    @Type(() => MediaIdentityDto)
-    mediaSelfieBack?: MediaIdentityDto = new MediaIdentityDto();
-
-    @IsOptional()
-    @IsEnum(eVerificationStep)
-    identityVerification?: eVerificationStep = eVerificationStep.IDLE;
+    @IsString()
+    seller_id?: string = "";
 }
 
 export class UpdateNotificationSimpleDto {

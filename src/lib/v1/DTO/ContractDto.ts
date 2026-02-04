@@ -6,7 +6,8 @@ import {FinancialDto} from './FinancialDto.js';
 import {IsStringOrNumber} from "../core/Validators.js";
 import {CompanyDto} from './CompanyDto.js';
 import {oAssetDto} from './AssetDto.js';
-import {eContractStatus} from "ravcredit-core";
+import {eContractStatus, eVerificationStep} from "ravcredit-core";
+import {MediaIdentityDto} from "./ClientDto.js";
 
 export class ContractDto {
     @IsString()
@@ -59,6 +60,34 @@ export class ContractV2Dto extends ContractDto {
     @ValidateNested()
     @Type(() => oAssetDto)
     asset: oAssetDto = new oAssetDto();
+
+    @IsOptional()
+    @IsString()
+    amortization_id?: string;
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => MediaIdentityDto)
+    mediaSelfie?: MediaIdentityDto = new MediaIdentityDto();
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => MediaIdentityDto)
+    mediaAddress?: MediaIdentityDto = new MediaIdentityDto();
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => MediaIdentityDto)
+    mediaWithDevice?: MediaIdentityDto = new MediaIdentityDto();
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => MediaIdentityDto)
+    mediaSelfieBack?: MediaIdentityDto = new MediaIdentityDto();
+
+    @IsOptional()
+    @IsEnum(eVerificationStep)
+    identityVerification?: eVerificationStep = eVerificationStep.IDLE;
 }
 
 export class ContractDto2 {
