@@ -21,7 +21,7 @@ export declare class ContractDto {
 export declare class ContractV2Dto extends ContractDto {
     company: CompanyDto;
     contract_status: eContractStatus;
-    asset: oAssetDto;
+    asset: oAssetDto[];
     amortization_id?: string;
     mediaSelfie?: MediaIdentityDto;
     mediaAddress?: MediaIdentityDto;

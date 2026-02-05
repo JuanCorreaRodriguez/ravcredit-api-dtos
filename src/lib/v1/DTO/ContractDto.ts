@@ -1,4 +1,4 @@
-import {IsBoolean, IsEnum, IsNumber, IsOptional, IsString, Validate, ValidateNested} from 'class-validator';
+import {IsArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, Validate, ValidateNested} from 'class-validator';
 import {Transform, Type} from 'class-transformer';
 import {AddressDto} from './AddressDto.js';
 import {DeviceDto} from './DeviceDto.js';
@@ -58,8 +58,9 @@ export class ContractV2Dto extends ContractDto {
     contract_status: eContractStatus = eContractStatus.APPROVED; // Or your default enum value
 
     @ValidateNested()
+    @IsArray()
     @Type(() => oAssetDto)
-    asset: oAssetDto = new oAssetDto();
+    asset: oAssetDto[] = [];
 
     @IsOptional()
     @IsString()

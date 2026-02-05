@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { IsBoolean, IsEnum, IsNumber, IsOptional, IsString, Validate, ValidateNested } from 'class-validator';
+import { IsArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, Validate, ValidateNested } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
 import { AddressDto } from './AddressDto.js';
 import { DeviceDto } from './DeviceDto.js';
@@ -68,7 +68,7 @@ __decorate([
 export class ContractV2Dto extends ContractDto {
     company = new CompanyDto();
     contract_status = eContractStatus.APPROVED; // Or your default enum value
-    asset = new oAssetDto();
+    asset = [];
     amortization_id;
     mediaSelfie = new MediaIdentityDto();
     mediaAddress = new MediaIdentityDto();
@@ -85,6 +85,7 @@ __decorate([
 ], ContractV2Dto.prototype, "contract_status", void 0);
 __decorate([
     ValidateNested(),
+    IsArray(),
     Type(() => oAssetDto)
 ], ContractV2Dto.prototype, "asset", void 0);
 __decorate([
