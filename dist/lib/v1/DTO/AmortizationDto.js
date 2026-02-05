@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { IsEnum, IsNumber, IsString } from 'class-validator';
+import { IsArray, IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 import { AmortizationStatus } from "ravcredit-core";
 export class AmortizationItemDto {
     installmentNumber = 0;
@@ -80,3 +80,14 @@ __decorate([
 __decorate([
     IsEnum(AmortizationStatus)
 ], AmortizationItemDto.prototype, "status", void 0);
+export class AmortizationDto {
+    id = "";
+    items = [];
+}
+__decorate([
+    IsString(),
+    IsOptional()
+], AmortizationDto.prototype, "id", void 0);
+__decorate([
+    IsArray()
+], AmortizationDto.prototype, "items", void 0);

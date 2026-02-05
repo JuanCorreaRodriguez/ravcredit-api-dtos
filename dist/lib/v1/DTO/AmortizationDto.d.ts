@@ -19,3 +19,7 @@ export declare class AmortizationItemDto {
     finalBalance: number;
     status: AmortizationStatus;
 }
+export declare class AmortizationDto {
+    id?: string;
+    items: AmortizationItemDto[];
+}
