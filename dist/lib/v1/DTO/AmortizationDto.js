@@ -82,12 +82,16 @@ __decorate([
 ], AmortizationItemDto.prototype, "status", void 0);
 export class AmortizationDto {
     id = "";
+    client_id = "";
     items = [];
 }
 __decorate([
     IsString(),
     IsOptional()
 ], AmortizationDto.prototype, "id", void 0);
+__decorate([
+    IsString()
+], AmortizationDto.prototype, "client_id", void 0);
 __decorate([
     IsArray()
 ], AmortizationDto.prototype, "items", void 0);

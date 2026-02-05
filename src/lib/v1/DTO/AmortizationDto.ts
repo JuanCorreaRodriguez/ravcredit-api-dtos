@@ -61,7 +61,10 @@ export class AmortizationDto {
     @IsString()
     @IsOptional()
     id?: string = "";
-    
+
+    @IsString()
+    client_id: string = "";
+
     @IsArray()
     items: AmortizationItemDto[] = [];
 }

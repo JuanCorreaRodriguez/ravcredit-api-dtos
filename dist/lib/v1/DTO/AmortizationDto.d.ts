@@ -21,5 +21,6 @@ export declare class AmortizationItemDto {
 }
 export declare class AmortizationDto {
     id?: string;
+    client_id: string;
     items: AmortizationItemDto[];
 }
