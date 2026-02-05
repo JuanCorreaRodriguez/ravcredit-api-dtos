@@ -1,4 +1,4 @@
-import {IsEnum, IsNumber, IsString} from 'class-validator';
+import {IsArray, IsEnum, IsNumber, IsOptional, IsString} from 'class-validator';
 import {AmortizationStatus} from "ravcredit-core";
 
 export class AmortizationItemDto {
@@ -55,4 +55,13 @@ export class AmortizationItemDto {
 
     @IsEnum(AmortizationStatus)
     status: AmortizationStatus = AmortizationStatus.PENDING;
+}
+
+export class AmortizationDto {
+    @IsString()
+    @IsOptional()
+    id?: string = "";
+    
+    @IsArray()
+    items: AmortizationItemDto[] = [];
 }
