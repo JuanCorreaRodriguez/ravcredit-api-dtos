@@ -83,6 +83,7 @@ __decorate([
 export class AmortizationDto {
     id = "";
     client_id = "";
+    contract_id = "";
     items = [];
 }
 __decorate([
@@ -92,6 +93,9 @@ __decorate([
 __decorate([
     IsString()
 ], AmortizationDto.prototype, "client_id", void 0);
+__decorate([
+    IsString()
+], AmortizationDto.prototype, "contract_id", void 0);
 __decorate([
     IsArray()
 ], AmortizationDto.prototype, "items", void 0);

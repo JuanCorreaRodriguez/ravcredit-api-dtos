@@ -65,6 +65,9 @@ export class AmortizationDto {
     @IsString()
     client_id: string = "";
 
+    @IsString()
+    contract_id: string = "";
+
     @IsArray()
     items: AmortizationItemDto[] = [];
 }
