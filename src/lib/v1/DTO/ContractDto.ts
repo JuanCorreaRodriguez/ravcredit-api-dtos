@@ -45,7 +45,7 @@ export class ContractDto {
     dynamicAccount?: string | number;
 
     @IsOptional()
-    @ValidateNested()
+    // @ValidateNested()
     @Type(() => CompanyDto)
     company?: CompanyDto;
 
