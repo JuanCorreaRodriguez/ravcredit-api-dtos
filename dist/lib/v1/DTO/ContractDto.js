@@ -64,8 +64,9 @@ __decorate([
     Validate(IsStringOrNumber)
 ], ContractDto.prototype, "dynamicAccount", void 0);
 __decorate([
-    IsOptional(),
-    ValidateNested(),
+    IsOptional()
+    // @ValidateNested()
+    ,
     Type(() => CompanyDto)
 ], ContractDto.prototype, "company", void 0);
 __decorate([
