@@ -43,10 +43,11 @@ export class ContractDto {
     @IsOptional()
     @Validate(IsStringOrNumber)
     dynamicAccount?: string | number;
-    
+
+    @IsOptional()
     @ValidateNested()
     @Type(() => CompanyDto)
-    company: CompanyDto;
+    company?: CompanyDto;
 
     @IsString()
     status: string;

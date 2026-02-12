@@ -16,7 +16,7 @@ export declare class ContractDto {
     by: string;
     active: boolean;
     dynamicAccount?: string | number;
-    company: CompanyDto;
+    company?: CompanyDto;
     status: string;
     asset: oAssetDto[];
 }
