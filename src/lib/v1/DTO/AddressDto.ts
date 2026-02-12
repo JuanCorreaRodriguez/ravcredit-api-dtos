@@ -1,27 +1,26 @@
-import { IsOptional, IsString, MinLength } from 'class-validator';
+import {IsOptional, IsString} from 'class-validator';
 
 export class AddressDto {
 
-  @IsString()
-  @MinLength(1)
-  street: string = "";
+    @IsString()
+    street: string = "";
 
-  @IsString()
-  city: string = "";
+    @IsString()
+    city: string = "";
 
-  @IsString()
-  neighbor: string = "";
+    @IsString()
+    neighbor: string = "";
 
-  @IsString()
-  zip: string = "";
+    @IsString()
+    zip: string = "";
 
-  @IsString()
-  ext: string = "";
+    @IsString()
+    ext: string = "";
 
-  @IsString()
-  @IsOptional()
-  int: string = "";
+    @IsString()
+    @IsOptional()
+    int: string = "";
 
-  @IsString()
-  state: string = "";
+    @IsString()
+    state: string = "";
 }
