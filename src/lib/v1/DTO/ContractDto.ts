@@ -38,15 +38,22 @@ export class ContractDto {
     by: string;
 
     @IsBoolean()
-    @IsOptional()
-    status?: boolean;
-
-    @IsBoolean()
     active: boolean;
 
     @IsOptional()
     @Validate(IsStringOrNumber)
     dynamicAccount?: string | number;
+    
+    @ValidateNested()
+    @Type(() => CompanyDto)
+    company: CompanyDto;
+
+    @IsString()
+    status: string;
+
+    @ValidateNested()
+    @IsArray()
+    asset: oAssetDto[] = [];
 }
 
 export class ContractV2Dto extends ContractDto {

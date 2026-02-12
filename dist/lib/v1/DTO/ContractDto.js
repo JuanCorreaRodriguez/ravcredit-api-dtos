@@ -23,9 +23,11 @@ export class ContractDto {
     createdAt;
     lastPayment;
     by;
-    status;
     active;
     dynamicAccount;
+    company;
+    status;
+    asset = [];
 }
 __decorate([
     IsString()
@@ -55,16 +57,23 @@ __decorate([
     IsString()
 ], ContractDto.prototype, "by", void 0);
 __decorate([
-    IsBoolean(),
-    IsOptional()
-], ContractDto.prototype, "status", void 0);
-__decorate([
     IsBoolean()
 ], ContractDto.prototype, "active", void 0);
 __decorate([
     IsOptional(),
     Validate(IsStringOrNumber)
 ], ContractDto.prototype, "dynamicAccount", void 0);
+__decorate([
+    ValidateNested(),
+    Type(() => CompanyDto)
+], ContractDto.prototype, "company", void 0);
+__decorate([
+    IsString()
+], ContractDto.prototype, "status", void 0);
+__decorate([
+    ValidateNested(),
+    IsArray()
+], ContractDto.prototype, "asset", void 0);
 export class ContractV2Dto extends ContractDto {
     company = new CompanyDto();
     contract_status = eContractStatus.APPROVED; // Or your default enum value

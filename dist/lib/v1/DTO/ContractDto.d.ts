@@ -14,9 +14,11 @@ export declare class ContractDto {
     createdAt: number;
     lastPayment: number;
     by: string;
-    status?: boolean;
     active: boolean;
     dynamicAccount?: string | number;
+    company: CompanyDto;
+    status: string;
+    asset: oAssetDto[];
 }
 export declare class ContractV2Dto extends ContractDto {
     company: CompanyDto;
