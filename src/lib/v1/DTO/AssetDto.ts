@@ -115,22 +115,22 @@ export class oAssetFeaturesDto {
     @IsArray()
     @ValidateNested()
     @Type(() => AssetCategoryDto)
-    category: AssetCategoryDto[] = [];
+    categories: AssetCategoryDto[] = [];
 
     @IsArray()
     @ValidateNested()
     @Type(() => AssetBrandDto)
-    brand: AssetBrandDto[] = [];
+    brands: AssetBrandDto[] = [];
 
     @IsArray()
     @ValidateNested({each: true})
     @Type(() => PaymentOptionDto)
-    paymentOption: PaymentOptionDto[] = [];
+    paymentOptions: PaymentOptionDto[] = [];
 
     @IsArray()
     @ValidateNested()
     @Type(() => CatalogDto)
-    catalog: CatalogDto[] = [];
+    catalogs: CatalogDto[] = [];
 
     @IsArray()
     @ValidateNested({each: true})
@@ -140,5 +140,5 @@ export class oAssetFeaturesDto {
     @IsArray()
     @ValidateNested()
     @Type(() => ScoreReferenceDto)
-    score: ScoreReferenceDto[] = [];
+    scores: ScoreReferenceDto[] = [];
 }
