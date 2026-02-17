@@ -144,3 +144,37 @@ __decorate([
 __decorate([
     IsString()
 ], oAssetDto.prototype, "IMEI", void 0);
+export class oAssetFeaturesDto {
+    category = new AssetCategoryDto();
+    brand = new AssetBrandDto();
+    paymentOption = [];
+    catalog = new CatalogDto();
+    offers = [];
+    score = new ScoreReferenceDto();
+}
+__decorate([
+    ValidateNested(),
+    Type(() => AssetCategoryDto)
+], oAssetFeaturesDto.prototype, "category", void 0);
+__decorate([
+    ValidateNested(),
+    Type(() => AssetBrandDto)
+], oAssetFeaturesDto.prototype, "brand", void 0);
+__decorate([
+    IsArray(),
+    ValidateNested({ each: true }),
+    Type(() => PaymentOptionDto)
+], oAssetFeaturesDto.prototype, "paymentOption", void 0);
+__decorate([
+    ValidateNested(),
+    Type(() => CatalogDto)
+], oAssetFeaturesDto.prototype, "catalog", void 0);
+__decorate([
+    IsArray(),
+    ValidateNested({ each: true }),
+    Type(() => AssetOfferDto)
+], oAssetFeaturesDto.prototype, "offers", void 0);
+__decorate([
+    ValidateNested(),
+    Type(() => ScoreReferenceDto)
+], oAssetFeaturesDto.prototype, "score", void 0);

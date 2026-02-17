@@ -110,3 +110,31 @@ export class oAssetDto {
     @IsString()
     IMEI: string = "";
 }
+
+export class oAssetFeaturesDto {
+    @ValidateNested()
+    @Type(() => AssetCategoryDto)
+    category: AssetCategoryDto = new AssetCategoryDto();
+
+    @ValidateNested()
+    @Type(() => AssetBrandDto)
+    brand: AssetBrandDto = new AssetBrandDto();
+
+    @IsArray()
+    @ValidateNested({each: true})
+    @Type(() => PaymentOptionDto)
+    paymentOption: PaymentOptionDto[] = [];
+
+    @ValidateNested()
+    @Type(() => CatalogDto)
+    catalog: CatalogDto = new CatalogDto();
+
+    @IsArray()
+    @ValidateNested({each: true})
+    @Type(() => AssetOfferDto)
+    offers: AssetOfferDto[] = [];
+
+    @ValidateNested()
+    @Type(() => ScoreReferenceDto)
+    score: ScoreReferenceDto = new ScoreReferenceDto();
+}

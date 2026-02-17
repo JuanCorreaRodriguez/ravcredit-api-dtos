@@ -41,3 +41,11 @@ export declare class oAssetDto {
     score: ScoreReferenceDto;
     IMEI: string;
 }
+export declare class oAssetFeaturesDto {
+    category: AssetCategoryDto;
+    brand: AssetBrandDto;
+    paymentOption: PaymentOptionDto[];
+    catalog: CatalogDto;
+    offers: AssetOfferDto[];
+    score: ScoreReferenceDto;
+}
