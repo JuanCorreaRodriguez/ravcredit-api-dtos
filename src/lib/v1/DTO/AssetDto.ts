@@ -112,29 +112,33 @@ export class oAssetDto {
 }
 
 export class oAssetFeaturesDto {
+    @IsArray()
     @ValidateNested()
     @Type(() => AssetCategoryDto)
-    category: AssetCategoryDto = new AssetCategoryDto();
+    category: AssetCategoryDto[] = [];
 
+    @IsArray()
     @ValidateNested()
     @Type(() => AssetBrandDto)
-    brand: AssetBrandDto = new AssetBrandDto();
+    brand: AssetBrandDto[] = [];
 
     @IsArray()
     @ValidateNested({each: true})
     @Type(() => PaymentOptionDto)
     paymentOption: PaymentOptionDto[] = [];
 
+    @IsArray()
     @ValidateNested()
     @Type(() => CatalogDto)
-    catalog: CatalogDto = new CatalogDto();
+    catalog: CatalogDto[] = [];
 
     @IsArray()
     @ValidateNested({each: true})
     @Type(() => AssetOfferDto)
     offers: AssetOfferDto[] = [];
 
+    @IsArray()
     @ValidateNested()
     @Type(() => ScoreReferenceDto)
-    score: ScoreReferenceDto = new ScoreReferenceDto();
+    score: ScoreReferenceDto[] = [];
 }

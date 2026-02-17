@@ -42,10 +42,10 @@ export declare class oAssetDto {
     IMEI: string;
 }
 export declare class oAssetFeaturesDto {
-    category: AssetCategoryDto;
-    brand: AssetBrandDto;
+    category: AssetCategoryDto[];
+    brand: AssetBrandDto[];
     paymentOption: PaymentOptionDto[];
-    catalog: CatalogDto;
+    catalog: CatalogDto[];
     offers: AssetOfferDto[];
-    score: ScoreReferenceDto;
+    score: ScoreReferenceDto[];
 }
